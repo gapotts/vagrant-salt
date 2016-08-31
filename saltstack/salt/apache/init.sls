@@ -29,7 +29,7 @@ sync mod_status.conf:
 {% elif grains['os_family'] == 'RedHat' %}
     - name: /etc/httpd/conf.d/mod_status.conf
 {% endif %}
-    - source: salt://mod_status.conf
+    - source: salt://apache/mod_status.conf
     - user: root
     - group: root
     - mode: 600
@@ -38,7 +38,7 @@ sync mod_status.conf:
 sync mod_status.load:
   file.managed:
     - name: /etc/apache2/mods-enabled/mod_status.load
-    - source: salt://mod_status.load
+    - source: salt://apache/mod_status.load
     - user: root
     - group: root
     - mode: 600
